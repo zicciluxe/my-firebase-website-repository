@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - main  # Set this to the branch you want to deploy from (usually 'main' or 'master')
+      - master # Set this to the branch you want to deploy from (usually 'main' or 'master')
 
 jobs:
   deploy_live_website:
