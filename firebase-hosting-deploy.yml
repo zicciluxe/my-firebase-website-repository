@@ -1,0 +1,19 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main  # Set this to the branch you want to deploy from (usually 'main' or 'master')
+
+jobs:
+  deploy_live_website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # ⚠️ IMPORTANT: If your site needs a build step (like React/Vue), uncomment and replace the next line:
+      # - run: npm ci && npm run build 
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: zicci-55ac # ⬅️ REPLACE with your project ID
+          channelId: live
